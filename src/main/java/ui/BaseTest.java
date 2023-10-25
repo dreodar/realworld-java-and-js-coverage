@@ -2,6 +2,9 @@ package ui;
 
 import com.codeborne.selenide.*;
 import org.junit.jupiter.api.*;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 
 import static com.codeborne.selenide.Selenide.*;
 
@@ -14,15 +17,15 @@ abstract class BaseTest {
 
     public BaseTest() {
         Configuration.baseUrl = baseUrl;
-        Configuration.holdBrowserOpen = true;
+    //    Configuration.holdBrowserOpen = true;
         Configuration.browser = "chrome";
         login();
     }
 
     @BeforeAll
     public static void beforeAll() {
-        System.setProperty("webdriver.chrome.driver", "..\\chrome-driver\\chromedriver.exe");
-        Configuration.browserBinary = "..\\chromium-binary\\chrome-win\\chrome.exe";
+     //   System.setProperty("webdriver.chrome.driver", "chrome-driver/chromedriver");
+   //     Configuration.browserBinary = "chrome-driver/chrome-win/chrome";
         open(baseUrl);
     }
 
